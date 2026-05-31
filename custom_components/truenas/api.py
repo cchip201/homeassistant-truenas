@@ -114,7 +114,7 @@ class TrueNASAPI(object):
             except Exception:
                 errorcode = "no_response"
 
-            if not (errorcode == 400 and service in ("reporting/get_data", "reporting/netdata_get_data", "disk/temperatures")):
+            if not ((errorcode == 400 or errorcode == 404) and service in ("reporting/get_data", "reporting/netdata_get_data", "disk/temperatures", "jail")):
                 _LOGGER.warning(
                     'TrueNAS %s unable to fetch data "%s" (%s)',
                     self._host,
@@ -124,9 +124,7 @@ class TrueNASAPI(object):
 
             if (
                 errorcode != 500
-                and service != "reporting/get_data"
-                and service != "reporting/netdata_get_data"
-                and service != "disk/temperatures"
+                and service not in ("reporting/get_data", "reporting/netdata_get_data", "disk/temperatures", "jail")
             ):
                 self._connected = False
 
