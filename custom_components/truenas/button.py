@@ -11,7 +11,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .coordinator import TrueNASCoordinator
 from .entity import TrueNASEntity, async_add_entities
-from .button_types import BUTTON_TYPES
+from .button_types import SENSOR_TYPES
 
 _LOGGER = getLogger(__name__)
 

@@ -23,7 +23,7 @@ class TrueNASButtonEntityDescription(ButtonEntityDescription):
     func: str = "TrueNASButton"
 
 
-BUTTON_TYPES: tuple[TrueNASButtonEntityDescription, ...] = (
+SENSOR_TYPES: tuple[TrueNASButtonEntityDescription, ...] = (
     TrueNASButtonEntityDescription(
         key="system_reboot",
         name="Reboot",
@@ -51,3 +51,6 @@ BUTTON_TYPES: tuple[TrueNASButtonEntityDescription, ...] = (
         func="TrueNASShutdownButton",
     ),
 )
+
+SENSOR_SERVICES = []
+

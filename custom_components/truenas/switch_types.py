@@ -59,7 +59,7 @@ class TrueNASSwitchEntityDescription(SwitchEntityDescription):
     data_attributes_list: List = field(default_factory=lambda: [])
     func: str = "TrueNASSwitch"
 
-SWITCH_TYPES: tuple[TrueNASSwitchEntityDescription, ...] = (
+SENSOR_TYPES: tuple[TrueNASSwitchEntityDescription, ...] = (
     TrueNASSwitchEntityDescription(
         key="jail",
         name="",
@@ -125,3 +125,6 @@ SWITCH_TYPES: tuple[TrueNASSwitchEntityDescription, ...] = (
         func="TrueNASAppSwitch",
     ),
 )
+
+SENSOR_SERVICES = []
+
