@@ -20,6 +20,8 @@ class TrueNASButtonEntityDescription(ButtonEntityDescription):
     data_name: str | None = None
     data_uid: str | None = None
     data_reference: str | None = None
+    data_attribute: str | None = None
+    data_attributes_list: List = field(default_factory=lambda: [])
     func: str = "TrueNASButton"
 
 
@@ -35,6 +37,7 @@ SENSOR_TYPES: tuple[TrueNASButtonEntityDescription, ...] = (
         data_name="",
         data_uid="",
         data_reference="",
+        data_attribute="hostname",
         func="TrueNASRebootButton",
     ),
     TrueNASButtonEntityDescription(
@@ -48,6 +51,7 @@ SENSOR_TYPES: tuple[TrueNASButtonEntityDescription, ...] = (
         data_name="",
         data_uid="",
         data_reference="",
+        data_attribute="hostname",
         func="TrueNASShutdownButton",
     ),
 )
