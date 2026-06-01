@@ -22,6 +22,8 @@ class TrueNASButtonEntityDescription(ButtonEntityDescription):
     data_reference: str | None = None
     data_attribute: str | None = None
     data_attributes_list: List = field(default_factory=lambda: [])
+    ha_connection: str | None = None
+    ha_connection_value: str | None = None
     func: str = "TrueNASButton"
 
 
