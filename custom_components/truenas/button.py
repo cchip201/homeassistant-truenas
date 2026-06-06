@@ -39,6 +39,7 @@ class TrueNASRebootButton(TrueNASButton):
             self.coordinator.api.query,
             "system/reboot",
             "post",
+            {"delay": 0},
         )
 
 class TrueNASShutdownButton(TrueNASButton):
@@ -49,4 +50,5 @@ class TrueNASShutdownButton(TrueNASButton):
             self.coordinator.api.query,
             "system/shutdown",
             "post",
+            {"delay": 0},
         )
